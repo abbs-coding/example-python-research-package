@@ -1,14 +1,24 @@
-"""Example module demonstrating best practices."""
+"""
+This module contains anexample function that demonstrate basic text
+processing tasks, such as counting words in a string.
+"""
 
 
-def hello(name: str) -> str:
-    """
-    Return a greeting message.
+def count_words(text: str) -> int:
+    """Count the number of words in a piece of text.
+    Words are defined as whitespace-separated tokens.
 
     Args:
-        name: The name to greet.
+        text: Input text.
 
     Returns:
-        A greeting message.
+        The number of words in the text.
+
+    Raises:
+        ValueError: If the input text is empty or only contains whitespace.
     """
-    return f"Hello, {name}!"
+    if text.strip() == "":
+        raise ValueError("Text must contain at least one word")
+
+    words = text.split()
+    return len(words)
