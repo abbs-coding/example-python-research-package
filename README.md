@@ -6,7 +6,6 @@ This repository was inspired by a coaching engagement with a PhD student who wan
 It provides a minimal but realistic example of a small research project structured and packaged in a way that (hopefully!) avoids common pitfalls.
 
 ## Who is this for?
-
 This repository is aimed at:
 - PhD students
 - Early-career researchers
@@ -14,8 +13,7 @@ This repository is aimed at:
 
 It assumes basic familiarity with Python, but no prior experience with Python packaging.
 
-## What This Repository Shows
-
+## What this repository shows
 This example demonstrates:
 - How to structure a small research codebase using a `src/` layout
 - How to define a project using `pyproject.toml`
@@ -23,7 +21,6 @@ This example demonstrates:
 - How to write simple tests against research code
 
 ## How to use it
-
 You are not expected to use this repository verbatim.
 
 Instead, treat it as:
@@ -31,8 +28,7 @@ Instead, treat it as:
 - a starting point for your own research projects
 - something to adapt rather than copy
 
-## Common Misconceptions
-
+## Common misconceptions
 Common issues this structure helps avoid:
 
 - Import errors when running scripts from different locations
@@ -47,14 +43,13 @@ All are warmly encouraged to use this repository freely and to modify it in acco
 Contributions, suggestions, and corrections are welcome.
 
 ## License
-
 This project is licensed under the MIT License. See LICENSE for details.
 
 
 ## Contact
+For questions or feedback, please open an issue or contact:
 
-For questions, feedback, or collaboration inquiries, please contact:
-
-Dr Helen Abbott
+Dr Helen Abbott  
 Advanced Research Computing, University of Birmingham
+
 h.e.abbott.1@bham.ac.uk
