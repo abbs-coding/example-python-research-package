@@ -18,6 +18,46 @@ This example demonstrates:
 - How to define a project using `pyproject.toml`
 - How to install your own code in editable mode
 - How to write simple tests against research code
+- How a minimal example module and test suite fit into this structure
+
+## Repository structure and examples
+
+This repository contains a small, deliberately simple example package and a corresponding test suite. The goal is to demonstrate *structure and workflow*, rather than sophisticated functionality.
+
+### The example module
+
+The example code lives in:
+
+    src/example_python_research_package/example.py
+
+This module contains a small, self-contained function that performs a simple text-processing task. The choice of example is intentionally non‑domain‑specific, so that the focus remains on code structure and packaging rather than subject matter.
+
+The module is placed inside a directory with the same name as the package (`example_python_research_package`). This is the directory that is installed when the project is installed with `pip`.
+
+### The `__init__.py` files
+
+Both the package directory and the `tests` directory contain an empty `__init__.py` file.
+
+These files indicate to Python that the directories should be treated as packages. Including them makes imports explicit and predictable, and avoids subtle differences in behaviour across Python versions and environments. For small research projects, it is generally safest to include them.
+
+### Tests
+
+The tests live in the `tests/` directory:
+
+    tests/test_example.py
+
+These tests:
+- import the code from the installed package (rather than via relative paths)
+- check expected behaviour for typical inputs
+- check that appropriate errors are raised for invalid inputs
+
+This mirrors how the code would be used in practice and helps ensure that it behaves consistently across different environments, including HPC systems and CI pipelines.
+
+### `.gitignore`
+
+A `.gitignore` file is included to prevent files such as virtual environments, compiled Python files, and test artefacts from being committed to version control.
+
+This helps keep the repository focused on source code and documentation, and avoids accidental commits of local or machine‑specific files.
 
 ## How to use it
 You are not expected to use this repository verbatim.
@@ -26,6 +66,53 @@ Instead, treat it as:
 - a reference structure
 - a starting point for your own research projects
 - something to adapt rather than copy
+
+## Running the example
+
+This section shows how to install the project, run the example code, and execute the tests. These steps mirror a typical workflow for a small research codebase.
+
+### Create and activate a virtual environment
+
+It is recommended to work inside a virtual environment to avoid conflicts with other Python projects.
+
+From the root of the repository:
+
+```bash
+python -m venv .venv
+```
+
+Activate the environment:
+```bash
+# macOS / Linux
+source .venv/bin/activate
+
+# Windows
+.venv\Scripts\activate
+```
+
+### Install the project
+Install the project in editable mode, along with the development dependencies:
+``` bash
+pip install -e .[dev]
+```
+Editable installation means changes to the source code are picked up immediately, without reinstalling the package.
+
+### Run the example code
+Once installed, the example module can be imported from anywhere inside the repository (or outside it).
+For example, start a Python interpreter and run:
+``` python
+from example_python_research_package.example import count_words
+
+count_words("This is a short example")
+```
+This demonstrates that the code is being imported from the installed package, rather than via relative paths.
+
+### Run the tests
+To run the test suite:
+``` bash 
+pytest
+```
+The tests import the package in the same way a user would and verify both expected behaviour and error handling. This helps ensure the code behaves consistently across different environments, including HPC systems and continuous integration pipelines.
 
 ## Common misconceptions
 Common issues this structure helps avoid:
