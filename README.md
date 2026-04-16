@@ -1,5 +1,6 @@
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green) 
+![Tests](https://github.com/abbs-coding/example-python-research-package/actions/workflows/tests.yml/badge.svg)
 
 # example-python-research-package
 
