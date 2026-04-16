@@ -4,9 +4,9 @@
 
 Continuous integration (CI) is a way of automatically running checks on your code whenever it changes.
 
-In this repository, CI is used to run the test suite whenever code is pushed to the repository or a pull request is opened.
+In this repository, CI is used to run the test suite whenever code is pushed to the repository or a pull request is opened. This is handled by [GitHub Actions](https://github.com/features/actions).
 
-This is handled by [GitHub Actions](https://github.com/features/actions).
+You can think of CI as running the same checks you would run locally, but on a fresh, clean machine.
 
 ## What happens in this repository?
 
@@ -17,7 +17,13 @@ When you push code:
 - The package is installed
 - The tests are run using pytest
 
-This happens independently of your local machine.
+This happens independently of your local machine and local configuration.
+
+The instructions for these steps live in a GitHub Actions workflow file:
+``` bash
+.github/workflows/test.yml
+```
+It is useful to know where the behaviour comes from.
 
 ## Why this matters
 
@@ -30,6 +36,7 @@ For example:
 - Changes that break existing functionality
 
 It also improves reproducibility. If the tests pass in CI, you know the code works outside your own setup.
+This is particularly important in research software, where code may be run months later or by someone else entirely.
 
 ## How to read the results
 
@@ -52,4 +59,11 @@ For most research projects, it is enough to know that:
 - Failures are reported clearly
 - You should fix failing tests before continuing
 
-This simple setup is often sufficient for small and medium-sized research codebases.
+The existing setup in this repository is intentionally simple and is often sufficient for small and medium-sized research codebases.
+If you later need to:
+
+- change the Python version
+- add extra checks
+- run the code on multiple platforms
+
+you can revisit the workflow file at that point.

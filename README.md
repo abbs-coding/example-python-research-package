@@ -6,7 +6,7 @@
 
 A minimal example of how to structure and package a small Python research project.
 
-This repository is intended as a reference for researchers who want a clean, reliable way to organise code beyond scripts and notebooks.
+This repository demonstrates a clean, reliable way to organise research code so that it installs consistently, runs in clean environments, and is easier to test, share, and review.
 
 ## Audience
 
@@ -57,13 +57,15 @@ pytest
 ```
 The test suite is also run automatically using GitHub Actions on each push and pull request.
 
-Example usage:
+## Example usage:
 
 ```python
 from example_python_research_package.example import count_words
 
 count_words("This is a short example")
 ```
+This reflects how the code is intended to be used by scripts, notebooks, tests, and reviewers.
+
 
 ## Project structure
 
