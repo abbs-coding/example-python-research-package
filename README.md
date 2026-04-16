@@ -20,6 +20,11 @@ This example demonstrates:
 - How to write simple tests against research code
 - How a minimal example module and test suite fit into this structure
 
+## Why package research code?
+As research projects grow, collections of scripts and notebooks can become hard to reuse, test, and run reliably. Packaging your code gives it a clear structure, makes it easy to import from anywhere, and removes fragile assumptions about file paths and execution order.
+It also makes running on HPC systems much easier: when your code is packaged and installed into a well-defined environment, you can recreate the same setup each time. 
+This repository shows a minimal way to do that, aimed at small academic research projects rather than full-scale software.
+
 ## Repository structure and examples
 
 This repository contains a small, deliberately simple example package and a corresponding test suite. The goal is to demonstrate *structure and workflow*, rather than sophisticated functionality.
