@@ -2,6 +2,8 @@
 
 The `pyproject.toml` file defines how your project is built and installed.
 
+This is the file that tools like `pip`, `pytest`, and continuous integration systems read to understand your project.
+
 You do not need to understand every detail to use it effectively. At a high level, it answers three questions:
 
 - How is the project installed?
@@ -30,10 +32,10 @@ In research, the authors listed here are the people responsible for the software
 
 ## Dependencies
 
-Dependencies are split into two groups:
+Dependencies are split into two main groups:
 
 - `dependencies`: required to run the code
-- `optional dependencies`: used for development, such as testing
+- `optional dependencies`: additional tools, often used for development ( e.g. testing)
 
 This allows you to install only what you need:
 
