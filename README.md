@@ -1,5 +1,6 @@
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green) 
+![Tests](https://github.com/abbs-coding/example-python-research-package/actions/workflows/tests.yml/badge.svg)
 
 # example-python-research-package
 
@@ -54,6 +55,7 @@ Run the tests:
 ```bash
 pytest
 ```
+The test suite is also run automatically using GitHub Actions on each push and pull request.
 
 Example usage:
 
@@ -95,6 +97,7 @@ If you want to understand the reasoning behind this structure:
 - [Understanding pyproject.toml](docs/understanding-pyproject-toml.md)
 - [How to write a README](docs/how-to-write-a-readme.md)
 - [Development workflow](docs/development-workflow.md)
+- [Continuous Integration](docs/continuous-integration.md)
 
 ## Usage
 
